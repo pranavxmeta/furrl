@@ -1,0 +1,57 @@
+{
+    "name": "furrl",
+    "displayName": "Furrl Folder Tree",
+    "description": "Expand & Collapse selected folder in VS Code Explorer",
+    "version": "26.9.0",
+    "publisher": "proxdev",
+    "engines": {
+        "vscode": "^1.90.0"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/pranavxmeta/furrl.git"
+    },
+    "categories": [
+        "Other"
+    ],
+    "main": "./dist/extension.js",
+    "activationEvents": [],
+    "contributes": {
+        "commands": [
+            {
+                "command": "fileExplorer.expandRecursively",
+                "title": "Expand Selected Folder",
+                "icon": "$(chevron-down)"
+            },
+            {
+                "command": "fileExplorer.collapseRecursively",
+                "title": "Collapse Selected Folder",
+                "icon": "$(chevron-up)"
+            }
+        ],
+        "menus": {
+            "view/title": [
+                {
+                    "command": "fileExplorer.expandRecursively",
+                    "when": "view == workbench.explorer.fileView",
+                    "group": "navigation@1"
+                },
+                {
+                    "command": "fileExplorer.collapseRecursively",
+                    "when": "view == workbench.explorer.fileView",
+                    "group": "navigation@2"
+                }
+            ]
+        }
+    },
+    "scripts": {
+        "vscode:prepublish": "npm run compile",
+        "compile": "tsc -p ./",
+        "watch": "tsc -watch -p ./"
+    },
+    "devDependencies": {
+        "@types/node": "^22.x",
+        "@types/vscode": "^1.90.0",
+        "typescript": "^7.0.0"
+    }
+}

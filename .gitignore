@@ -1,0 +1,25 @@
+# Dependencies
+node_modules/
+
+# Build outputs
+dist/
+out/
+
+# Bundled VS Code extension package
+*.vsix
+
+# Local VS Code debugging state & tests
+.vscode-test/
+.vscode/*
+!.vscode/launch.json
+!.vscode/tasks.json
+!.vscode/settings.json
+
+# Logs & Environment variables
+*.log
+.env
+.env.local
+
+# OS metadata
+.DS_Store
+Thumbs.db
